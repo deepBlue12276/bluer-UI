@@ -12487,8 +12487,33 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var _default = {
-  name: 'Button'
+  name: "Button",
+  props: {
+    type: {
+      type: String,
+      default: 'primary'
+    },
+    icon: {
+      type: String,
+      default: ""
+    },
+    iconPosition: {
+      type: String
+    }
+  },
+  computed: {
+    isRight: function isRight() {
+      if (this.right) return true;else return false;
+    }
+  }
 };
 exports.default = _default;
         var $58ca05 = exports.default || module.exports;
@@ -12500,10 +12525,30 @@ exports.default = _default;
         /* template */
         Object.assign($58ca05, (function () {
           var render = function() {
+  var _obj
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { staticClass: "g-button" }, [_vm._v("按钮")])
+  return _c(
+    "button",
+    {
+      staticClass: "b-button",
+      class:
+        ((_obj = {}),
+        (_obj["b-button-" + _vm.type] = true),
+        (_obj["icon-" + _vm.iconPosition] = true),
+        _obj)
+    },
+    [
+      _vm.icon
+        ? _c("svg", { staticClass: "icon" }, [
+            _c("use", { attrs: { "xlink:href": "#i" + _vm.icon } })
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

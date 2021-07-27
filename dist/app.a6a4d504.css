@@ -1,17 +1,48 @@
-.g-button {
-  height: var(--button-height);
-  font-size: var(--font-size);
+.b-button {
+  height: 32px;
+  font-size: 14px;
   padding: 0 1em;
-  border-radius: var(--button-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
+  border-radius: 4px;
+  border: 1px solid #f56c6c;
+  background: #f56c6c;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  vertical-align: middle;
 }
-.g-button:hover {
-  border-color: var(--border-color-hover);
+.b-button:hover {
+  border-color: #f89c9c;
+  color: white;
+  background-color: #f89c9c;
+  box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
 }
-.g-button:active {
-  background-color: var(--button-active-bg);
+.b-button:active {
+  border-color: #f23c3c;
+  background-color: #f23c3c;
+  color: #e6e6e6;
 }
-.g-button:focus {
+.b-button:focus {
   outline: none;
+}
+.b-button .icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.b-button > .icon {
+  order: 1;
+  margin-right: 0.3em;
+}
+.b-button > .content {
+  order: 2;
+}
+.b-button.icon-right > .icon {
+  order: 2;
+  margin-left: 0.3em;
+}
+.b-button.icon-right > .content {
+  order: 1;
 }
